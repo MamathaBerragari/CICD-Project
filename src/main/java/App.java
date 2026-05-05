@@ -1,5 +1,19 @@
+package com.cicd;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.*;
+
+@SpringBootApplication
+@RestController
 public class App {
+
     public static void main(String[] args) {
-        System.out.println("Hello from CI/CD Maven Docker Kubernetes Pipeline!");
+        SpringApplication.run(App.class, args);
+    }
+
+    @GetMapping("/")
+    public String home() {
+        return "Hello from CI/CD Web Application 🚀";
     }
 }
