@@ -1,2 +1,7 @@
-FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/index.html
+FROM openjdk:17
+
+WORKDIR /app
+
+COPY target/cicd-project-1.0-SNAPSHOT.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
